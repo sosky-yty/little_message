@@ -19,12 +19,16 @@ module.exports = {
   ],
   // add your custom rules here
   'rules': {
-    // allow paren-less arrow functions
-    'arrow-parens': 0,
-    // allow async-await
-    'generator-star-spacing': 0,
-    // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+     // allow async-await
+     'generator-star-spacing': 'off',
+     // allow debugger during development
+     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+     "requireStringLiterals": true,
+     "no-multiple-empty-lines": [0, {"max": 100}],
+     //关闭禁止混用tab和空格
+     "no-mixed-spaces-and-tabs": [0],
+     //关闭严格回调检查
+     "no-callback-literal": false
   },
   globals: {
     App: true,

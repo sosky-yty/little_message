@@ -9,5 +9,20 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/main",
+        "text": "小消息",
+        "iconPath": "static/images/chat.png",
+        "selectedIconPath": "static/images/s_chat.png"
+      }, {
+        "pagePath": "pages/counter/main",
+        "text": "我",
+        "iconPath": "static/images/me.png",
+        "selectedIconPath": "static/images/s_me.png"
+      }
+    ]
   }
 }
