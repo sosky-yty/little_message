@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/main",
     "pages/logs/main",
-    "pages/counter/main"
+    "pages/me/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -18,7 +18,7 @@
         "iconPath": "static/images/chat.png",
         "selectedIconPath": "static/images/s_chat.png"
       }, {
-        "pagePath": "pages/counter/main",
+        "pagePath": "pages/me/main",
         "text": "我",
         "iconPath": "static/images/me.png",
         "selectedIconPath": "static/images/s_me.png"
