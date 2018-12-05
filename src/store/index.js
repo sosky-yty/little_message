@@ -45,7 +45,7 @@ const state = {
         'name': '阿荡',
         'headerUrl': 'https://sinacloud.net/vue-wechat/images/headers/header01.png'
       }],
-      'user': [contact.getUserInfo('wxid_zhaohd')] // 此消息的用户数组 长度为1则为私聊 长度大于1则为群聊
+      'user': [contact.getUserInfo('wxid_yanghao')] // 此消息的用户数组 长度为1则为私聊 长度大于1则为群聊
     },
     {
       'mid': 2,
@@ -73,7 +73,7 @@ const state = {
         'headerUrl': 'https://sinacloud.net/vue-wechat/images/headers/yehua.jpg'
       }
       ],
-      'user': [contact.getUserInfo('wxid_zhaohd'), contact.getUserInfo('wxid_yehua')]
+      'user': [contact.getUserInfo('wxid_yanghao'), contact.getUserInfo('wxid_yangli')]
     },
     {
       'mid': 3,
@@ -89,7 +89,7 @@ const state = {
         'name': '诸葛亮',
         'headerUrl': 'https://sinacloud.net/vue-wechat/images/headers/zhugeliang.jpg'
       }],
-      'user': [contact.getUserInfo('wxid_zhenji'), contact.getUserInfo('wxid_zhugeliang'), contact.getUserInfo('wxid_zhaohd')]
+      'user': [contact.getUserInfo('wxid_xihaozou'), contact.getUserInfo('wxid_zhugeliang'), contact.getUserInfo('wxid_yanghao')]
     },
     {
       'mid': 4,
@@ -115,7 +115,7 @@ const state = {
         'name': '孙权',
         'headerUrl': 'https://sinacloud.net/vue-wechat/images/headers/sunquan.jpg'
       }],
-      'user': [contact.getUserInfo('wxid_sunquan')]
+      'user': [contact.getUserInfo('wxid_yangli')]
     },
     {
       'mid': 5,
@@ -131,7 +131,7 @@ const state = {
         'name': '孙尚香',
         'headerUrl': 'https://sinacloud.net/vue-wechat/images/headers/sunshangxiang.jpg'
       }],
-      'user': [contact.getUserInfo('wxid_sunshangxiang')]
+      'user': [contact.getUserInfo('wxid_jiangruize')]
     },
     {
       'mid': 6,

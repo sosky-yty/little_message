@@ -6,5 +6,7 @@ Vue.config.productionTip = false
 App.mpType = 'app'
 // 注入store选项
 Vue.prototype.$store = store
-const app = new Vue(App)
+const app = new Vue({
+  App
+})
 app.$mount()

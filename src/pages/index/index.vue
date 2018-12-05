@@ -1,67 +1,29 @@
 <template>
-  <div class="container" @click="clickHandle('test click', $event)">
-
-    <div class="userinfo" @click="bindViewTap">
-      <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
-      <div class="userinfo-nickname">
-        <card :text="userInfo.nickName"></card>
-      </div>
-    </div>
-
-    <div class="usermotto">
-      <div class="user-motto">
-        <card :text="motto"></card>
-      </div>
-    </div>
-
-    <form class="form-container">
-      <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
-    </form>
-    <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
+    <!--微信组件-->
+  <div id="wechat">
+    <ul class="wechat-list">
+        <!--props传递消息对象 baseMsgObj -->
+        <msg-item v-for="baseMsgObj in this.$store.state.msgList.baseMsg" :item="baseMsgObj" :key="baseMsgObj.mid"></msg-item>
+    </ul>
+    <p>页面显示测试</p>
   </div>
 </template>
 
 <script>
 import card from '@/components/card'
-
+import msgItem from '@/components/msg-item'
 export default {
   data () {
     return {
-      motto: 'Hello World',
-      userInfo: {}
+      pageName: '微信'
     }
   },
-
   components: {
-    card
+    card,
+    msgItem
   },
-
-  methods: {
-    bindViewTap () {
-      const url = '../logs/main'
-      wx.navigateTo({ url })
-    },
-    getUserInfo () {
-      // 调用登录接口
-      wx.login({
-        success: () => {
-          wx.getUserInfo({
-            success: (res) => {
-              this.userInfo = res.userInfo
-            }
-          })
-        }
-      })
-    },
-    clickHandle (msg, ev) {
-      console.log('clickHandle:', msg, ev)
-    }
-  },
-
-  created () {
-    // 调用应用实例的方法获取全局数据
-    this.getUserInfo()
+  mounted () {
+    console.log(this.$store.state.msgList.baseMsg)
   }
 }
 </script>
@@ -102,4 +64,5 @@ export default {
   color: blue;
   border: 1px solid blue;
 }
+#wechat .wechat-list{position:relative;overflow-x:hidden;z-index:1}#wechat .wechat-list .list-row{height:64px;position:relative;overflow:hidden}#wechat .wechat-list .list-row.item-hide{-webkit-transition:0.3s;transition:0.3s;height:0px}#wechat .wechat-list .list-row.item-hide:after{content:"";position:absolute;z-index:2;top:1px;bottom:1px;width:100%;background:rgba(0,0,0,0.3)}#wechat .wechat-list .list-row:last-child:after{content:"";position:absolute;width:200%;left:0;z-index:10;left:8px;bottom:0;-webkit-transform:scale(0.5);-ms-transform:scale(0.5);transform:scale(0.5);-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;-webkit-transform:scale(0.5);-webkit-transform-origin:0 0;background-color:#b7b7b7;height:1px}#wechat .wechat-list .list-row .list-info{position:relative;z-index:2;left:0;width:100%;height:64px;padding:8px;background-color:#fff}#wechat .wechat-list .list-row .list-info .header-box{position:relative;float:left;width:48px;height:48px;margin-right:10px}#wechat .wechat-list .list-row .list-info .header-box .header{height:100%;border-radius:5px;display:-webkit-box;display:-ms-flexbox;display:flex;display:-webkit-flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;overflow:hidden;background:#dddbdb}#wechat .wechat-list .list-row .list-info .header-box .header img{width:10%;height:auto;-webkit-box-flex:2;-webkit-flex-grow:2;-ms-flex-positive:2;flex-grow:2;border:0}#wechat .wechat-list .list-row .list-info .header-box .header.multi-header img{margin:1px}#wechat .wechat-list .list-row .list-info .desc-box{overflow:hidden}#wechat .wechat-list .list-row .list-info .desc-box .desc-time{float:right;color:#b8b8b8}#wechat .wechat-list .list-row .list-info .desc-box .desc-author{height:25px;line-height:25px;font-size:16px;color:#000}#wechat .wechat-list .list-row .list-info .desc-box .desc-msg{height:23px;line-height:23px;font-size:14px;color:#888}#wechat .wechat-list .list-row .list-info .desc-box .desc-msg .desc-mute{float:right;color:#b8b8b8}#wechat .wechat-list .list-row .operate-box{position:absolute;z-index:1;height:100%;right:0;top:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}#wechat .wechat-list .list-row .operate-box>div{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;background-color:#c7c7cc;color:#fff;font-size:18px;padding:0 12px}#wechat .wechat-list .list-row .operate-box .operate-del{background-color:#ff3b30}
 </style>
