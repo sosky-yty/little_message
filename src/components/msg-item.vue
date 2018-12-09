@@ -3,7 +3,7 @@
     <!--进入 dialogue 页面，携带参数 mid name group_num -->
     <li :class="{'item-hide':deleteMsg}">
         <!--自定义指令 v-swiper 用于对每个消息进行滑动处理-->
-        <div tag="div" class="list-info" v-on:click.native="toggleMsgRead($event,'enter')">
+        <div class="list-info" v-on:click.native="toggleMsgRead($event,'enter')">
             <div class="header-box">
                 <!--未读并且未屏蔽 才显示新信息数量-->
                 <i class="new-msg-count" v-show="!read&&!item.quiet">{{item.msg.length}}</i>
@@ -11,7 +11,7 @@
                 <i class="new-msg-dot" v-show="!read&&item.quiet"></i>
                 <!--如果是私聊，只显示一个头像； 如果是群聊，则显示多个头像，flex 控制样式-->
                 <div class="header" :class="[item.type=='group'?'multi-header':'']">
-                    <img v-for="userInfo in this.item.user" :key="userInfo.wxid" :src="userInfo.headerUrl">
+                    <img v-for="userInfo in item.user" :key="userInfo.wxid" :src="userInfo.headerUrl">
                 </div>
             </div>
             <div class="desc-box">
@@ -41,7 +41,7 @@ export default {
     data() {
         return {
             read: this.item.read,
-            deleteMsg: false
+            deleteMsg: true
         }
     },
     methods: {
@@ -75,9 +75,6 @@ export default {
                 }
             }
         }
-    },
-    mounted () {
-        console.log(this.item.user)
     }
     // // 参考 https://vuefe.cn/v2/guide/custom-directive.html
     // directives: {
