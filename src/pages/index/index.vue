@@ -22,8 +22,8 @@
         <!--props传递消息对象 baseMsgObj -->
         <!-- <msg-item v-for="baseMsgObj in $store.state.msgList.baseMsg" :item="baseMsgObj" :key="baseMsgObj.mid">
         </msg-item> -->
+        <newmsg-item v-for="baseMsgObj in baseMsgs" :item="baseMsgObj" :key="baseMsgObj">123</newmsg-item>
       </ul>
-      <newmsg-item v-for="baseMsgObj in baseMsgs" :item="baseMsgObj" :key="baseMsgObj">123</newmsg-item>
     </div>
   </div>
 </template>
