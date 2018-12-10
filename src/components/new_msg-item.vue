@@ -1,5 +1,5 @@
 <template>
-     <li class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+     <li class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" @tap="jumpto()">
         <div class="weui-media-box__hd weui-media-box__hd_in-appmsg">
             <image class="weui-media-box__thumb" :src="item.user[0].headerUrl" />
         </div>
@@ -13,8 +13,20 @@
 <script>
 export default {
   props: ['item'],
+  data () {
+    return {
+      m_id: ''
+    }
+  },
   mounted () {
-    console.log(this.item)
+    this.m_id = this.item.mid
+  },
+  methods: {
+    jumpto () {
+      wx.navigateTo({
+        url: '../chat/main?id=' + this.m_id
+      })
+    }
   }
 }
 </script>

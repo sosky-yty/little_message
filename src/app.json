@@ -2,13 +2,15 @@
   "pages": [
     "pages/index/main",
     "pages/logs/main",
-    "pages/me/main"
+    "pages/me/main",
+    "pages/chat/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
   },
   "tabBar": {
     "list": [
