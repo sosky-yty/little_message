@@ -1,6 +1,6 @@
 <template>
-  <div class="header">
-    <div class="center">
+  <div class="wx_header">
+    <div class="wx_center">
       <span >{{pageName}}</span>
     </div>
   </div>

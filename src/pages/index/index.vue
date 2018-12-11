@@ -1,5 +1,5 @@
 <template>
-  <div id="page">
+  <div class="page">
     <welcome></welcome>
     <wx-header pageName="小消息" ></wx-header>
     <!-- 顶部下拉框内容 -->

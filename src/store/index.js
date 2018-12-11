@@ -32,17 +32,17 @@ const state = {
       'msg': [{ // 对话框的聊天记录 新消息 push 进
         'text': '长按这些白色框消息，唤醒消息操作菜单，长按这些白色框消息，唤醒消息操作菜单',
         'date': 1488117964495,
-        'name': '阿荡',
+        'name': '小袁',
         'headerUrl': 'https://sinacloud.net/vue-wechat/images/headers/header01.png'
       }, {
         'text': '点击空白处，操作菜单消失',
         'date': 1488117964495,
-        'name': '阿荡',
+        'name': '小袁',
         'headerUrl': 'https://sinacloud.net/vue-wechat/images/headers/header01.png'
       }, {
         'text': '来呀 快活啊',
         'date': 1488117964495,
-        'name': '阿荡',
+        'name': '小袁',
         'headerUrl': 'https://sinacloud.net/vue-wechat/images/headers/header01.png'
       }],
       'user': [contact.getUserInfo('wxid_yanghao')] // 此消息的用户数组 长度为1则为私聊 长度大于1则为群聊
