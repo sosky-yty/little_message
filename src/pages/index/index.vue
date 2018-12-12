@@ -11,7 +11,7 @@
     <div class="page_bd" style="margin-top:40px">
       <ul class="weui-panel weui-panel_access">
         <div class="weui-panel__hd">消息列表</div>
-        <div class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+        <!-- <div class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
         <div class="weui-media-box__hd weui-media-box__hd_in-appmsg">
               <image class="weui-media-box__thumb" src="https://sinacloud.net/vue-wechat/images/headers/baiqian.jpg" />
             </div>
@@ -19,7 +19,7 @@
               <div class="weui-media-box__title">vr001</div>
               <div class="weui-media-box__desc">我们可以开始收购腾讯了</div>
             </div>
-        </div>
+        </div> -->
         <!--props传递消息对象 baseMsgObj -->
         <!-- <msg-item class="list-row" v-for="baseMsgObj in baseMsgs" :item="baseMsgObj" :key="baseMsgObj.mid">
         </msg-item> -->
@@ -45,7 +45,6 @@ export default {
   },
   onPageScroll (e) {
     var top = e.scrollTop
-    console.log('滑动')
     if (top > 0) {
       this.elastic_top = top
       return

@@ -100,8 +100,8 @@ export default {
       this.mMsgs.push({
         'text': this.text,
         'date': 1488117964495,
-        'name': '阿荡',
-        'headerUrl': 'https://sinacloud.net/vue-wechat/images/headers/header01.png'
+        'name': 'sky',
+        'headerUrl': 'https://sinacloud.net/vue-wechat/images/headers/zhenji.jpg'
       })
       this.text = ''
     }
