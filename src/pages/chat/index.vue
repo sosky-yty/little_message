@@ -24,6 +24,10 @@
                 <img :src="item.headerUrl" class="header" style="height:35px;">
                 <p class="text" >{{item.text}}</p>
             </div>
+             <div class="r-row clearfix" v-for="item in mMsgs" :key="item">
+                <img :src="item.headerUrl" class="r-header" style="height:35px;">
+                <p class="r-text" >{{item.text}}</p>
+            </div>
             <span class="msg-more" id="msg-more">
               <ul>
                   <li>复制</li>
@@ -45,7 +49,7 @@
                     </div>
                 </div>
                 <div class="chat-way" v-show="currentChatWay">
-                    <input class="chat-txt" type="text" v-on:focus="focusIpt" v-on:blur="blurIpt"/>
+                    <input class="chat-txt" type="text" @confirm="pushMsg()" :value="value" v-model="text"/>
                 </div>
                 <span class="expression iconfont icon-dialogue-smile" style="margin-left: 15px"></span>
                 <span class="more iconfont icon-dialogue-jia"></span>
@@ -84,8 +88,20 @@ export default {
       id: '',
       name: '',
       msgs: '',
+      mMsgs: [],
       headerUrl: '',
-      currentChatWay: true
+      currentChatWay: true,
+      currentText: ''
+    }
+  },
+  methods: {
+    pushMsg () {
+      this.mMsgs.push({
+        'text': this.text,
+        'date': 1488117964495,
+        'name': '阿荡',
+        'headerUrl': 'https://sinacloud.net/vue-wechat/images/headers/header01.png'
+      })
     }
   },
   mounted () {
