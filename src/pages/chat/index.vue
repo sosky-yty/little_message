@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="chat-way" v-show="currentChatWay">
-                    <input class="chat-txt" type="text" @confirm="pushMsg()" :value="value" v-model="text"/>
+                    <input class="chat-txt" type="text" @confirm="pushMsg()"  v-model="text"/>
                 </div>
                 <span class="expression iconfont icon-dialogue-smile" style="margin-left: 15px"></span>
                 <span class="more iconfont icon-dialogue-jia"></span>
@@ -91,7 +91,8 @@ export default {
       mMsgs: [],
       headerUrl: '',
       currentChatWay: true,
-      currentText: ''
+      currentText: '',
+      text: ''
     }
   },
   methods: {
@@ -102,6 +103,7 @@ export default {
         'name': '阿荡',
         'headerUrl': 'https://sinacloud.net/vue-wechat/images/headers/header01.png'
       })
+      this.text = ''
     }
   },
   mounted () {
@@ -110,6 +112,11 @@ export default {
     this.name = this.$store.state.msgList.baseMsg[this.id - 1].user[0].nickname
     this.msgs = this.$store.state.msgList.baseMsg[this.id - 1].msg
     this.headerUrl = this.$store.state.msgList.baseMsg[this.id - 1].user[0].headerUrl
+    this.mMsgs = this.$store.state.msgList.baseMsg[this.id - 1].m_msg
+  },
+  onUnload () {
+    this.$store.state.msgList.baseMsg[this.id - 1].m_msg = this.mMsgs
+    this.mMsgs = []
   },
   components: {
     wxHeader

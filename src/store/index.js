@@ -29,6 +29,7 @@ const state = {
       'read': true, // true；已读 false：未读
       'newMsgCount': 1,
       'quiet': false, // true：消息免打扰 false：提示此好友/群的新消息
+      'm_msg': [], // 自己的消息队列
       'msg': [{ // 对话框的聊天记录 新消息 push 进
         'text': '长按这些白色框消息，唤醒消息操作菜单，长按这些白色框消息，唤醒消息操作菜单',
         'date': 1488117964495,
@@ -55,6 +56,7 @@ const state = {
       'read': false,
       'newMsgCount': 1,
       'quiet': true,
+      'm_msg': [], // 自己的消息队列
       'msg': [{
         'text': '长按消息，唤醒消息操作菜单',
         'date': 1488117964495,
@@ -83,6 +85,7 @@ const state = {
       'read': true,
       'newMsgCount': 1,
       'quiet': true,
+      'm_msg': [], // 自己的消息队列
       'msg': [{
         'text': '冒个泡',
         'date': 1488117964495,
@@ -99,6 +102,7 @@ const state = {
       'read': false,
       'newMsgCount': 4,
       'quiet': false,
+      'm_msg': [], // 自己的消息队列
       'msg': [{
         'text': '长按消息，唤醒消息操作菜单',
         'date': 1488117964495,
@@ -125,6 +129,7 @@ const state = {
       'read': false,
       'newMsgCount': 4,
       'quiet': false,
+      'm_msg': [], // 自己的消息队列
       'msg': [{
         'text': '夫君,身体要紧~ ',
         'date': 1488117964495,
@@ -141,6 +146,7 @@ const state = {
       'read': false,
       'newMsgCount': 4,
       'quiet': true,
+      'm_msg': [], // 自己的消息队列
       'msg': [{
         'text': '三姓家奴！ ',
         'date': 1488117964495,
