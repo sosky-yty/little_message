@@ -3,7 +3,10 @@
     "pages/index/main",
     "pages/logs/main",
     "pages/me/main",
-    "pages/chat/main"
+    "pages/chat/main",
+    "pages/login/main",
+    "pages/device/main",
+    "pages/setting/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
