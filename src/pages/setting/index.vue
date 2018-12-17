@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="weui-btn-area">
-                <button class="weui-btn weui-btn_warn"  style="background: #ff5c33" id="exitBtn">退出登录</button>
+                <button class="weui-btn weui-btn_warn"  style="background: #ff5c33" @click="tip()">退出登录</button>
             </div>
         </section>
     </div>
@@ -44,6 +44,19 @@ export default {
     to (path) {
       wx.navigateTo({
         url: path
+      })
+    },
+    tip () {
+      wx.showModal({
+        title: '温馨提示',
+        content: '暂时只能使用测试账号哦',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
       })
     }
   }
