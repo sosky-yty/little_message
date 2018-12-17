@@ -3,7 +3,7 @@
   <div id="self">
     <div class="weui-tab__content" style="display: block;">
       <div class="weui-cells">
-        <div @click="to('../profile/main')" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <div @click="to('/self/profile')" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
           <div class="weui-cell__hd">
             <img src="https://sinacloud.net/vue-wechat/images/headers/header01.png" alt="" class="self-header">
           </div>
@@ -26,7 +26,7 @@
             <p>相册</p>
           </div>
         </div>
-        <div @click="to('../device/main')" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <div @click="to('../device/main.js')" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
           <div class="weui-cell__hd">
             <img src="../../../static/images/me_more-my-favorites.png"  style="height:20px">
           </div>
@@ -51,8 +51,8 @@
           </div>
         </div>
       </div>
-      <div class="weui-cells">
-        <div @click="to('../device/main')" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <div class="../device/main">
+        <div @click="to('../')" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
           <div class="weui-cell__hd">
             <img src="../../../static/images/me_more-expression.png"  style="height:20px">
           </div>

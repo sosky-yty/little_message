@@ -6,7 +6,8 @@
     "pages/chat/main",
     "pages/login/main",
     "pages/device/main",
-    "pages/setting/main"
+    "pages/setting/main",
+    "pages/profile/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
