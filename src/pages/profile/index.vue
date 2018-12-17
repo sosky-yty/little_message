@@ -1,78 +1,87 @@
 <template>
-    <!--我 组件-->
-  <div id="self">
-    <div class="weui-tab__content" style="display: block;">
-      <div class="weui-cells">
-        <div @click="to('/self/profile')" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-          <div class="weui-cell__hd">
-            <img src="https://sinacloud.net/vue-wechat/images/headers/header01.png" alt="" class="self-header">
-          </div>
-          <div class="weui-cell__bd">
-            <h4 class="self-nickname">sky</h4>
+    <div class="profile">
+        <div class="weui-cells">
+            <div class="weui-cell" id="avatarCell" hover-class="weui-cell_active">
+                <div class="weui-cell__bd">
+                    <p>头像</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <img src="https://sinacloud.net/vue-wechat/images/headers/header01.png" style="width: 50px;height: 50px;border-radius: 4px;">
+                </div>
+            </div>
+            <div class="weui-cell" hover-class="weui-cell_active">
+                <div class="weui-cell__bd">
+                    <p>名字</p>
+                </div>
+                <div class="weui-cell__ft">
+                    sky
+                </div>
+            </div>
+            <div class="weui-cell" hover-class="weui-cell_active">
+                <div class="weui-cell__bd">
+                    <p>小消息号</p>
+                </div>
+                <div class="weui-cell__ft">
+                    0001
+                </div>
+            </div>
+            <div @click="to('/self/profile/my-qrcode')" class="weui-cell weui-cell_access">
+                <div class="weui-cell__bd">
+                    <p>我的二维码</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <img src="../../../static/images/contact_add-friend-my-qr.png" style="vertical-align: middle; width:24px; height:24px;" class="_align-middle">
+                </div>
+            </div>
+            <div class="weui-cell" hover-class="weui-cell_active">
+                <div class="weui-cell__bd">
+                    <p>我的地址</p>
+                </div>
+                <div class="weui-cell__ft">
 
-            <p class="self-wxid">小消息账号：wx_sky</p>
-          </div>
-          <div class="weui-cell__ft">
-            <img src="../../../static/images/chat-info-qr.png" style="width:35px; height:35px">
-          </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="weui-cells">
-        <div @click="to('../device/main')" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-          <div class="weui-cell__hd">
-            <img src="../../../static/images/me_more-my-album.png" style="height:20px">
-          </div>
-          <div class="weui-cell__bd">
-            <p>相册</p>
-          </div>
+
+        <div class="weui-cells">
+            <div class="weui-cell" hover-class="weui-cell_active">
+                <div class="weui-cell__bd">
+                    <p>性别</p>
+                </div>
+                <div class="weui-cell__ft">
+                    男
+                </div>
+            </div>
+            <div class="weui-cell" hover-class="weui-cell_active">
+                <div class="weui-cell__bd">
+                    <p>地区</p>
+                </div>
+                <div class="weui-cell__ft">
+                   成都 郫县
+                </div>
+            </div>
+            <div class="weui-cell" hover-class="weui-cell_active">
+                <div class="weui-cell__bd">
+                    <p>个性签名</p>
+                </div>
+                <div class="weui-cell__ft">
+                    未填写
+                </div>
+            </div>
         </div>
-        <div @click="to('../device/main.js')" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-          <div class="weui-cell__hd">
-            <img src="../../../static/images/me_more-my-favorites.png"  style="height:20px">
-          </div>
-          <div class="weui-cell__bd">
-            <p>我的设备</p>
-          </div>
+
+        <div class="weui-cells">
+            <div class="weui-cell" hover-class="weui-cell_active">
+                <div class="weui-cell__bd">
+                    <p>关联腾讯qq账号</p>
+                </div>
+                <div class="weui-cell__ft">
+                    未设置
+                </div>
+            </div>
         </div>
-        <div @click="to('../device/main')" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-          <div class="weui-cell__hd">
-            <img src="../../../static/images/me_more-my-bank-card.png"  style="height:20px">
-          </div>
-          <div class="weui-cell__bd">
-            <p>钱包</p>
-          </div>
-        </div>
-        <div @click="to('../device/main')" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-          <div class="weui-cell__hd">
-            <img src="../../../static/images/me_my-card-package-icon.png"  style="height:20px">
-          </div>
-          <div class="weui-cell__bd">
-            <p>VR场景</p>
-          </div>
-        </div>
-      </div>
-      <div class="../device/main">
-        <div @click="to('../')" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-          <div class="weui-cell__hd">
-            <img src="../../../static/images/me_more-expression.png"  style="height:20px">
-          </div>
-          <div class="weui-cell__bd">
-            <p>VR表情</p>
-          </div>
-        </div>
-      </div>
-      <div class="weui-cells">
-        <div @click="to('../setting/main')" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-          <div class="weui-cell__hd">
-            <img src="../../../static/images/me_more-setting.png"  style="height:20px">
-          </div>
-          <div class="weui-cell__bd">
-            <p>设置</p>
-          </div>
-        </div>
-      </div>
+
     </div>
-  </div>
 </template>
 
 <script>
